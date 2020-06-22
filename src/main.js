@@ -15,8 +15,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = "http://localhost:8000/api/"
-
+axios.defaults.baseURL = "http://localhost:8358/api/"
 
 Vue.config.productionTip = false;
 
