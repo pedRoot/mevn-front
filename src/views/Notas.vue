@@ -74,7 +74,6 @@
                 </div>
                 <b-button
                   class="btn-danger my-3 mx-2"
-                  v-if="!modCreate"
                   @click="availableForm()"
                 >Cancelar</b-button>
                 <b-button type="submit" class="btn-success my-3">Enviar</b-button>
@@ -105,7 +104,9 @@ export default {
   methods: {
     availableForm(record = false) {
       this.modCreate = !record;
-      document.getElementById("formData").disabled = false;
+      
+      const statusFormData = document.getElementById("formData").disabled;
+      document.getElementById("formData").disabled = !statusFormData
 
       this.formData.id = "";
       this.formData.nombre = "";

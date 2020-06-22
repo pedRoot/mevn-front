@@ -15,7 +15,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 
 Vue.use(VueAxios, axios);
-axios.defaults.baseURL = process.env.URL_API
+axios.defaults.baseURL = process.env.VUE_APP_URL_API;
 
 Vue.config.productionTip = false;
 
