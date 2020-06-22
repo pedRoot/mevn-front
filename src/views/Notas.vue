@@ -27,9 +27,8 @@
               <td class="text-left">{{ item.nombre }}</td>
               <td class="text-left">{{ item.descripcion }}</td>
               <td>
-                <b-icon icon="trash-fill" variant="danger" @click="removeNota(item._id)"></b-icon>
-                <b-icon icon="pencil" variant="info" @click="availableForm(item)"></b-icon>
-                <b-icon icon="search" variant="primary"></b-icon>
+                <b-icon icon="trash-fill" class="mousePointer px-3" variant="danger" @click="removeNota(item._id)"></b-icon>
+                <b-icon icon="pencil" class="mousePointer px-3" variant="info" @click="availableForm(item)"></b-icon>
               </td>
             </tr>
           </tbody>
@@ -104,7 +103,7 @@ export default {
   methods: {
     availableForm(record = false) {
       this.modCreate = !record;
-      
+
       const statusFormData = document.getElementById("formData").disabled;
       document.getElementById("formData").disabled = !statusFormData
 
@@ -151,7 +150,7 @@ export default {
       this.axios
         .post("/nota", this.formData)
         .then(res => {
-          this.notas.push(res.data.nota);
+          this.notas.unshift(res.data.nota);
           this.formData.nombre = "";
           this.formData.descripcion = "";
 
@@ -217,3 +216,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.mousePointer {
+  cursor: pointer;
+}
+</style>
