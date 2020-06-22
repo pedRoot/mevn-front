@@ -27,8 +27,8 @@
               <td class="text-left">{{ item.nombre }}</td>
               <td class="text-left">{{ item.descripcion }}</td>
               <td>
-                <b-icon icon="trash-fill" class="mousePointer px-3" variant="danger" @click="removeNota(item._id)"></b-icon>
-                <b-icon icon="pencil" class="mousePointer px-3" variant="info" @click="availableForm(item)"></b-icon>
+                <b-icon icon="trash-fill" class="mousePointer mx-3" variant="danger" @click="removeNota(item._id)"></b-icon>
+                <b-icon icon="pencil" class="mousePointer mx-3" variant="info" @click="availableForm(item)"></b-icon>
               </td>
             </tr>
           </tbody>
